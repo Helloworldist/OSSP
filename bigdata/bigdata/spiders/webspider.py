@@ -1,6 +1,7 @@
 import pypiwin32_system32
 import scrapy
 
+
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
     start_urls = [
