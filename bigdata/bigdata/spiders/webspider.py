@@ -1,18 +1,17 @@
 import pypiwin32_system32
 import scrapy
+from bigdata.bigdata.items import Article
 
-
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
-    start_urls = [
-           'http://quotes.toscrape.com/page/1/',
-           'http://quotes.toscrape.com/page/2/',
-    ]
+class WebSpider(scrapy.Spider):
+    name = "Web"
+    allowed_domains = ["en.wikipedia.org"]
+    start_urls = ["https://en.wikipedia.org/wiki/Main_Page",
+                  "https://en.wikipedia.org/wiki/Python_(programming_language)"
+            ]
 
     def parse(self, response):
-        for quote in response.css('div.quote'):
-            yield {
-                'text': quote.css('span.text::text').extract_first(),
-                'author' : quote.css('small.author::text').extract_first(),
-                'tags': quote.css('div.tags a.tag::text').extract(),
-            }
+        item = Article()
+        title = response.xpath('//h1/text(0)')[0].extract()
+        print("Title is: "+title)
+        item['title'] = title
+        return item
