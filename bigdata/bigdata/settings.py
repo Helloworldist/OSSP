@@ -10,7 +10,7 @@
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'bigdata'
-
+#LOG_LEVEL = 'ERROR'
 SPIDER_MODULES = ['bigdata.spiders']
 NEWSPIDER_MODULE = 'bigdata.spiders'
 
