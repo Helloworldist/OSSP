@@ -10,7 +10,7 @@
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'bigdata'
-
+LOG_LEVEL = 'INFO'  # 파싱된 정보만 출력되게 설정
 SPIDER_MODULES = ['bigdata.spiders']
 NEWSPIDER_MODULE = 'bigdata.spiders'
 
