@@ -6,7 +6,7 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from webcrawl.main import f_count
+from bigdata.bigdata.main import f_count
 
 class WebItem(scrapy.Item):
     # define the fields for your item here like:
